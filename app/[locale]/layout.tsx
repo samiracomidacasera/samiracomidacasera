@@ -99,7 +99,13 @@ export async function generateMetadata({
         "x-default": `${baseUrl}/es`,
       },
     },
-    icons: { icon: "/favicon.ico" },
+    icons: {
+      icon: [
+        { url: "/favicon.ico", sizes: "any" },
+        { url: "/icon.png", type: "image/png", sizes: "256x256" },
+      ],
+      apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    },
   };
 }
 
