@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+   TAILWIND V4 CUSTOM THEME CONFIGURATION
+───────────────────────────────────────────── */
+@theme {
+  --font-serif: var(--font-serif), 'Playfair Display', Georgia, serif;
+  --font-sans: var(--font-sans), 'Outfit', system-ui, sans-serif;
+
+  --color-brand-green: #0B5D3B;
+  --color-brand-green-light: #128C5A;
+  --color-brand-green-dark: #073D27;
+  --color-brand-gold: #C9A227;
+  --color-brand-gold-light: #E5C354;
+  --color-brand-gold-dark: #A1801C;
+  --color-brand-terra: #B45309;
+  --color-brand-cream: #FAF6F0;
+  --color-brand-cream-mid: #F3ECE2;
+  --color-brand-white: #FEFCF9;
+
+  --spacing-section-mobile: 4.5rem;
+  --spacing-section-desktop: 7.5rem;
+}
+
+/* ─────────────────────────────────────────────
+   GLOBAL STYLES & RESET
+───────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  background-color: var(--color-brand-white);
+  color: #1c1c1c;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Luxury typography styling */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  line-height: 1.15;
+}
+
+/* Elegant Moroccan Zellige Star SVG Background Pattern */
+.moroccan-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8l6 14 14 6-14 6-6 14-6-14-14-6 14-6zM8 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3zm64 0l3 7 7 3-7 3-3 7-3-7-7-3 7-3zM40 72l3 7 7 3-7 3-3 7-3-7-7-3 7-3z' fill='%23C9A227' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.moroccan-pattern-dark {
+  background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40 8l6 14 14 6-14 6-6 14-6-14-14-6 14-6zM8 40l3 7 7 3-7 3-3 7-3-7-7-3 7-3zm64 0l3 7 7 3-7 3-3 7-3-7-7-3 7-3zM40 72l3 7 7 3-7 3-3 7-3-7-7-3 7-3z' fill='%23FAF6F0' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+/* ─────────────────────────────────────────────
+   LAYOUT UTILITIES
+───────────────────────────────────────────── */
+.container-custom {
+  width: 100%;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 640px) {
+  .container-custom {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container-custom {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+.section-padding {
+  padding-top: var(--spacing-section-mobile);
+  padding-bottom: var(--spacing-section-mobile);
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: var(--spacing-section-desktop);
+    padding-bottom: var(--spacing-section-desktop);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   TYPOGRAPHY UTILITIES
+───────────────────────────────────────────── */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--color-brand-gold-light) 0%, var(--color-brand-gold) 50%, var(--color-brand-gold-dark) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-green {
+  background: linear-gradient(135deg, var(--color-brand-green) 0%, var(--color-brand-green-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────
+   COMPONENTS
+───────────────────────────────────────────── */
+.gold-divider {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-brand-gold), transparent);
+}
+
+/* Luxury Card Hover effect */
+.luxury-card {
+  background-color: #ffffff;
+  border: 1px solid rgba(201, 162, 39, 0.08);
+  border-radius: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.015);
+}
+.luxury-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(201, 162, 39, 0.25);
+  box-shadow: 0 16px 36px rgba(11, 93, 59, 0.04), 0 4px 12px rgba(201, 162, 39, 0.03);
+}
+
+/* Elegant Underline Animation */
+.animated-underline {
+  position: relative;
+}
+.animated-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-brand-gold);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.animated-underline:hover::after {
+  width: 100%;
+}
+
+/* Custom browser scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-green);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-green-dark);
+}
+
+/* Focus and Selection */
+:focus-visible {
+  outline: 2px solid var(--color-brand-green);
+  outline-offset: 3px;
+}
+::selection {
+  background-color: rgba(11, 93, 59, 0.1);
+  color: var(--color-brand-green);
+}
