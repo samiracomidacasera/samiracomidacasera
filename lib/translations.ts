@@ -100,6 +100,7 @@ export type UIKeys =
   | "map_hours_title"
   | "map_hours_days"
   | "map_hours_open"
+  | "map_hours_closed"
   | "map_phones_title"
   | "map_services_title"
   | "map_btn_google"
@@ -108,6 +109,7 @@ export type UIKeys =
   | "foot_col_contact"
   | "foot_col_hours"
   | "foot_hours_open"
+  | "foot_hours_closed"
   | "foot_hours_desc"
   | "foot_rights"
   | "foot_made_in"
@@ -236,7 +238,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     hero_title_2: "Comida Marroquí",
     hero_title_3: "en Torremolinos",
     hero_desc: "Comida casera tradicional preparada fresca a diario con los condimentos y sabores originales de Marruecos.",
-    hero_hours: "Todos los días · 10:00 – 23:30",
+    hero_hours: "Todos los días · 10:00 – 21:00",
     hero_address: "C. Río Aranda, 11 · Málaga",
     hero_btn_menu: "Ver Menú",
     hero_btn_call: "Llamar",
@@ -325,6 +327,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     map_hours_title: "Horario",
     map_hours_days: "Lunes a Domingo",
     map_hours_open: "Abierto",
+    map_hours_closed: "Cerrado",
     map_phones_title: "Teléfonos",
     map_services_title: "Servicios disponibles",
     map_btn_google: "Abrir en Google Maps",
@@ -333,6 +336,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     foot_col_contact: "Contacto",
     foot_col_hours: "Horario comercial",
     foot_hours_open: "Abierto ahora",
+    foot_hours_closed: "Cerrado ahora",
     foot_hours_desc: "Recomendamos encargar platos especiales con 24h de antelación.",
     foot_rights: "Todos los derechos reservados.",
     foot_made_in: "en Torremolinos",
@@ -396,7 +400,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_card_wsp_btn: "Abrir WhatsApp",
     contact_card_call_badge: "Línea Directa",
     contact_card_call_title: "Llamada Telefónica",
-    contact_card_call_desc: "Atendemos llamadas todos los días de 10:00 a 23:30 para pedidos telefónicos.",
+    contact_card_call_desc: "Atendemos llamadas todos los días de 10:00 a 21:00 para pedidos telefónicos.",
     contact_card_call_btn1: "Llamar Tel 1",
     contact_card_call_btn2: "Llamar Tel 2",
     contact_card_uber_badge: "A Domicilio",
@@ -433,7 +437,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_loc_car_desc: "Fácil acceso desde la N-340 / A-7, con zonas de aparcamiento público en las inmediaciones.",
     contact_hours_status_open: "Abierto Ahora",
     contact_hours_status_closed: "Cerrado Ahora",
-    contact_hours_detail: "Lunes a Domingo · 10:00 – 23:30 ininterrumpidamente",
+    contact_hours_detail: "Lunes a Domingo · 10:00 – 21:00 ininterrumpidamente",
     contact_faq_badge: "Preguntas Frecuentes",
     contact_faq_title: "Resolvemos tus Dudas",
     contact_faq_q1: "¿Toda la comida es 100% Halal?",
@@ -460,7 +464,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     hero_title_2: "Moroccan Food",
     hero_title_3: "in Torremolinos",
     hero_desc: "Traditional homemade food prepared fresh daily with the original spices and flavors of Morocco.",
-    hero_hours: "Every day · 10:00 AM – 11:30 PM",
+    hero_hours: "Every day · 10:00 AM – 9:00 PM",
     hero_address: "C. Río Aranda, 11 · Malaga",
     hero_btn_menu: "View Menu",
     hero_btn_call: "Call",
@@ -549,6 +553,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     map_hours_title: "Opening Hours",
     map_hours_days: "Monday to Sunday",
     map_hours_open: "Open",
+    map_hours_closed: "Closed",
     map_phones_title: "Phones",
     map_services_title: "Available services",
     map_btn_google: "Open in Google Maps",
@@ -557,6 +562,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     foot_col_contact: "Contact",
     foot_col_hours: "Opening Hours",
     foot_hours_open: "Open now",
+    foot_hours_closed: "Closed now",
     foot_hours_desc: "We recommend ordering special dishes 24h in advance.",
     foot_rights: "All rights reserved.",
     foot_made_in: "in Torremolinos",
@@ -620,7 +626,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_card_wsp_btn: "Open WhatsApp",
     contact_card_call_badge: "Direct Line",
     contact_card_call_title: "Direct Phone Call",
-    contact_card_call_desc: "We answer phone orders every day from 10:00 AM to 11:30 PM.",
+    contact_card_call_desc: "We answer phone orders every day from 10:00 AM to 9:00 PM.",
     contact_card_call_btn1: "Call Phone 1",
     contact_card_call_btn2: "Call Phone 2",
     contact_card_uber_badge: "Delivery",
@@ -657,7 +663,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_loc_car_desc: "Convenient access from N-340 / A-7 highway with public street parking nearby.",
     contact_hours_status_open: "Open Now",
     contact_hours_status_closed: "Closed Now",
-    contact_hours_detail: "Monday to Sunday · 10:00 AM – 11:30 PM nonstop",
+    contact_hours_detail: "Monday to Sunday · 10:00 AM – 9:00 PM nonstop",
     contact_faq_badge: "Frequently Asked Questions",
     contact_faq_title: "Here to Help You",
     contact_faq_q1: "Is all your food 100% Halal?",
@@ -684,7 +690,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     hero_title_2: "Cuisine Marocaine",
     hero_title_3: "à Torremolinos",
     hero_desc: "Cuisine maison traditionnelle préparée fraîche tous les jours avec les épices et les saveurs originales du Maroc.",
-    hero_hours: "Tous les jours · 10:00 – 23:30",
+    hero_hours: "Tous les jours · 10:00 – 21:00",
     hero_address: "C. Río Aranda, 11 · Malaga",
     hero_btn_menu: "Voir la Carte",
     hero_btn_call: "Appeler",
@@ -773,6 +779,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     map_hours_title: "Horaires",
     map_hours_days: "Lundi au Dimanche",
     map_hours_open: "Ouvert",
+    map_hours_closed: "Fermé",
     map_phones_title: "Téléphones",
     map_services_title: "Services disponibles",
     map_btn_google: "Ouvrir sur Google Maps",
@@ -781,6 +788,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     foot_col_contact: "Contact",
     foot_col_hours: "Horaires d'ouverture",
     foot_hours_open: "Ouvert",
+    foot_hours_closed: "Fermé actuellement",
     foot_hours_desc: "Nous recommandons de commander les plats spéciaux 24h à l'avance.",
     foot_rights: "Tous droits réservés.",
     foot_made_in: "à Torremolinos",
@@ -844,7 +852,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_card_wsp_btn: "Ouvrir WhatsApp",
     contact_card_call_badge: "Ligne Directe",
     contact_card_call_title: "Appel Téléphonique",
-    contact_card_call_desc: "Nous répondons à vos appels tous les jours de 10h00 à 23h30 pour vos commandes à emporter.",
+    contact_card_call_desc: "Nous répondons à vos appels tous les jours de 10h00 à 21h00 pour vos commandes à emporter.",
     contact_card_call_btn1: "Appeler Tél 1",
     contact_card_call_btn2: "Appeler Tél 2",
     contact_card_uber_badge: "Livraison",
@@ -881,7 +889,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_loc_car_desc: "Accès facile depuis la N-340 / A-7 avec zones de parking public aux alentours.",
     contact_hours_status_open: "Ouvert Actuellement",
     contact_hours_status_closed: "Fermé Actuellement",
-    contact_hours_detail: "Lundi au Dimanche · 10h00 – 23h30 en continu",
+    contact_hours_detail: "Lundi au Dimanche · 10h00 – 21h00 en continu",
     contact_faq_badge: "Foire Aux Questions",
     contact_faq_title: "Vos Questions Fréquentes",
     contact_faq_q1: "Tous vos plats sont-ils 100% Halal ?",

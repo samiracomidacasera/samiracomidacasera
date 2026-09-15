@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { MapPin, Clock, Phone, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -10,10 +11,16 @@ import {
   PHONE_SECONDARY_RAW,
   GOOGLE_MAPS_URL,
   GOOGLE_MAPS_EMBED,
+  isRestaurantOpenNow,
 } from "@/lib/utils";
 
 export default function MapSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [isOpenNow, setIsOpenNow] = useState(false);
+
+  useEffect(() => {
+    setIsOpenNow(isRestaurantOpenNow());
+  }, []);
 
   return (
     <section id="contact" className="section-padding bg-brand-cream moroccan-pattern">
@@ -84,11 +91,21 @@ export default function MapSection() {
                   </h3>
                   <div className="flex items-center justify-between gap-4 font-sans text-[0.82rem]">
                     <span className="text-gray-655 font-bold">{t("map_hours_days")}</span>
-                    <span className="text-gray-900 font-black">10:00 – 23:30</span>
+                    <span className="text-gray-900 font-black">{language === "en" ? "10:00 AM – 9:00 PM" : "10:00 – 21:00"}</span>
                   </div>
                   <div className="flex items-center gap-1.5 mt-3">
-                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                    <span className="text-green-700 font-sans text-[11px] font-bold uppercase tracking-wider">{t("map_hours_open")}</span>
+                    <div
+                      className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                        isOpenNow ? "bg-green-500 animate-pulse" : "bg-red-500"
+                      }`}
+                    />
+                    <span
+                      className={`font-sans text-[11px] font-bold uppercase tracking-wider ${
+                        isOpenNow ? "text-green-700" : "text-red-600"
+                      }`}
+                    >
+                      {isOpenNow ? t("map_hours_open") : t("map_hours_closed")}
+                    </span>
                   </div>
                 </div>
               </div>

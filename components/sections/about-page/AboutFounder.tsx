@@ -23,7 +23,7 @@ export default function AboutFounder() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl border-2 border-brand-gold/20 aspect-[4/5] max-w-md mx-auto lg:max-w-none">
               <Image
                 src="/about-story.webp"
-                alt="Auténtica comida marroquí tradicional - Samira Comida Para Llevar"
+                alt="Auténtica comida marroquí tradicional - Samira Comida Casera"
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -37,7 +37,7 @@ export default function AboutFounder() {
                   Torremolinos, España
                 </span>
                 <p className="font-serif font-bold text-xl text-white">
-                  Samira Comida Para Llevar
+                  Samira Comida Casera
                 </p>
                 <p className="font-sans text-xs text-white/80 font-medium">
                   C. Río Aranda, 11

@@ -130,7 +130,7 @@ export default function Navigation() {
                   Samira
                 </div>
                 <div className="text-brand-gold font-sans text-[8.5px] tracking-[0.2em] uppercase leading-none mt-1 font-semibold">
-                  Comida Para Llevar
+                  Comida Casera
                 </div>
               </div>
             </a>
@@ -257,7 +257,10 @@ export default function Navigation() {
             >
               {/* Header */}
               <div className="flex items-center justify-between px-5 py-[18px] border-b border-brand-cream-mid">
-                <span className="font-serif font-bold text-[1.4rem] text-brand-green leading-none">Samira</span>
+                <div className="leading-tight">
+                  <span className="font-serif font-bold text-[1.3rem] text-brand-green leading-none block">Samira</span>
+                  <span className="text-brand-gold font-sans text-[8px] tracking-[0.2em] uppercase font-bold">Comida Casera</span>
+                </div>
                 <button onClick={() => setIsOpen(false)} className="p-1.5 rounded-xl text-gray-400 hover:bg-brand-cream-mid hover:text-gray-700">
                   <X size={18} />
                 </button>
@@ -322,7 +325,7 @@ export default function Navigation() {
                     {t("nav_call")}
                   </a>
                   <p className="text-center text-gray-400 text-[10.5px] font-sans tracking-wide">
-                    Todos los días · 10:00 – 23:30
+                    {t("hero_hours")}
                   </p>
                 </div>
               </div>

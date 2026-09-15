@@ -72,7 +72,7 @@ export default function LocationDetails() {
             <div className="mt-4 flex flex-wrap items-center justify-between gap-4">
               <div className="flex items-center gap-2 text-xs font-sans text-gray-600 font-medium">
                 <Clock size={14} className="text-brand-gold-dark shrink-0" />
-                <span>Abierto todos los días: 10:00 – 23:30</span>
+                <span>{t("hero_hours")}</span>
               </div>
 
               <a

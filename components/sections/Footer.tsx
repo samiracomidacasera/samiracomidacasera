@@ -1,5 +1,6 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { MapPin, Phone, Clock, ExternalLink } from "lucide-react";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
@@ -11,6 +12,8 @@ import {
   WHATSAPP_URL,
   UBER_EATS_URL,
   GOOGLE_MAPS_URL,
+  OPENING_HOURS,
+  isRestaurantOpenNow,
 } from "@/lib/utils";
 
 const socials = [
@@ -42,6 +45,11 @@ export default function Footer() {
   const { language, t } = useLanguage();
   const pathname = usePathname();
   const router = useRouter();
+  const [isOpenNow, setIsOpenNow] = useState(false);
+
+  useEffect(() => {
+    setIsOpenNow(isRestaurantOpenNow());
+  }, []);
 
   const isHomePage =
     pathname === `/${language}` ||
@@ -86,7 +94,7 @@ export default function Footer() {
               </div>
               <div className="leading-tight">
                 <div className="font-serif font-bold text-[1.15rem] text-white">Samira</div>
-                <div className="font-sans text-[8.5px] text-brand-gold tracking-[0.18em] uppercase font-bold">Comida Para Llevar</div>
+                <div className="font-sans text-[8.5px] text-brand-gold tracking-[0.18em] uppercase font-bold">Comida Casera</div>
               </div>
             </div>
             <p className="text-white/75 font-sans text-[0.8rem] leading-relaxed mb-5.5 font-medium">
@@ -169,13 +177,31 @@ export default function Footer() {
               <Clock size={14} className="text-brand-gold mt-0.5 shrink-0" />
               <div className="leading-tight">
                 <p className="text-white/90 font-sans text-[0.8rem] font-bold">{t("map_hours_days")}</p>
-                <p className="text-white/70 font-sans text-[0.78rem] mt-1 font-medium">10:00 AM – 11:30 PM</p>
+                <p className="text-white/70 font-sans text-[0.78rem] mt-1 font-medium">{language === "en" ? "10:00 AM – 9:00 PM" : "10:00 – 21:00"}</p>
               </div>
             </div>
-            <div className="p-3.5 bg-brand-green/20 rounded-xl border border-brand-gold/15">
+            <div
+              className={`p-3.5 rounded-xl border transition-colors ${
+                isOpenNow
+                  ? "bg-brand-green/20 border-brand-gold/15"
+                  : "bg-red-950/25 border-red-500/25"
+              }`}
+            >
               <div className="flex items-center gap-2 mb-1.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse shrink-0" />
-                <span className="text-green-450 font-sans text-[10.5px] font-bold uppercase tracking-wider">{t("foot_hours_open")}</span>
+                <div
+                  className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                    isOpenNow
+                      ? "bg-green-400 animate-pulse"
+                      : "bg-red-400"
+                  }`}
+                />
+                <span
+                  className={`font-sans text-[10.5px] font-bold uppercase tracking-wider ${
+                    isOpenNow ? "text-green-400" : "text-red-400"
+                  }`}
+                >
+                  {isOpenNow ? t("foot_hours_open") : t("foot_hours_closed")}
+                </span>
               </div>
               <p className="text-white/70 font-sans text-[10.5px] leading-relaxed font-medium">
                 {t("foot_hours_desc")}
@@ -189,7 +215,7 @@ export default function Footer() {
       <div className="border-t border-white/10 bg-[#050a06]">
         <div className="container-custom py-4.5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-white/55 font-sans text-[10.5px] text-center sm:text-left font-medium">
-            © {new Date().getFullYear()} Samira Comida Para Llevar. {t("foot_rights")}
+            © {new Date().getFullYear()} Samira Comida Casera. {t("foot_rights")}
           </p>
           <div className="flex items-center gap-1.5 text-white/55 font-sans text-[10.5px] font-medium">
             <span>Hecho con</span>

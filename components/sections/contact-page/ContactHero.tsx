@@ -5,28 +5,14 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ChevronRight, Clock } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { isRestaurantOpenNow } from "@/lib/utils";
 
 export default function ContactHero() {
   const { language, t } = useLanguage();
-  const [isOpenNow, setIsOpenNow] = useState(true);
+  const [isOpenNow, setIsOpenNow] = useState(false);
 
   useEffect(() => {
-    // Check current time in Spain timezone (Europe/Madrid)
-    try {
-      const now = new Date();
-      const spainTimeStr = now.toLocaleTimeString("en-US", {
-        timeZone: "Europe/Madrid",
-        hour12: false,
-        hour: "numeric",
-        minute: "numeric",
-      });
-      const [hour, minute] = spainTimeStr.split(":").map(Number);
-      const decimalTime = hour + minute / 60;
-      // 10:00 to 23:30
-      setIsOpenNow(decimalTime >= 10 && decimalTime < 23.5);
-    } catch {
-      setIsOpenNow(true);
-    }
+    setIsOpenNow(isRestaurantOpenNow());
   }, []);
 
   return (
@@ -115,7 +101,7 @@ export default function ContactHero() {
             </div>
             <div className="flex items-center gap-2 text-white/80 text-xs sm:text-sm font-sans mb-1">
               <Clock size={15} className="text-brand-gold shrink-0" />
-              <span className="font-semibold">10:00 – 23:30</span>
+              <span className="font-semibold">{language === "en" ? "10:00 AM – 9:00 PM" : "10:00 – 21:00"}</span>
             </div>
             <p className="font-sans text-[11px] text-white/65 leading-snug">
               {t("contact_hours_detail")}

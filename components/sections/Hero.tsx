@@ -9,6 +9,8 @@ import {
   UBER_EATS_URL,
   PHONE_PRIMARY_RAW,
   GOOGLE_MAPS_URL,
+  RESTAURANT_ADDRESS,
+  OPENING_HOURS,
 } from "@/lib/utils";
 
 const RESTAURANT_IMAGES = [
@@ -73,8 +75,8 @@ export default function Hero() {
     language === "fr"
       ? currentImg.labelFr
       : language === "en"
-      ? currentImg.labelEn
-      : currentImg.labelEs;
+        ? currentImg.labelEn
+        : currentImg.labelEs;
 
   return (
     <section
@@ -101,7 +103,7 @@ export default function Hero() {
       {/* Main Content: 2-Column Grid on Desktop */}
       <div className="relative z-10 max-w-[1400px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-8 lg:py-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
-          
+
           {/* ========================================================
               COLUMN 1: Text, Information & Actions (Left Side)
               ======================================================== */}
@@ -158,7 +160,7 @@ export default function Hero() {
               <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md rounded-full px-4 py-2 border border-white/12">
                 <MapPin size={13} className="text-brand-gold shrink-0" />
                 <span className="text-white/95 text-xs font-sans font-medium">
-                  {t("hero_address")}
+                  {RESTAURANT_ADDRESS}
                 </span>
               </div>
             </div>
@@ -290,11 +292,10 @@ export default function Hero() {
                       setActivePhoto(idx);
                       setIsAutoPlaying(false);
                     }}
-                    className={`flex items-center gap-2.5 p-2.5 rounded-xl border text-left transition-all duration-300 cursor-pointer ${
-                      active
-                        ? "bg-brand-gold/20 text-white border-brand-gold shadow-md shadow-brand-gold/20 scale-102"
-                        : "bg-white/5 text-white/75 border-white/10 hover:bg-white/12 hover:text-white"
-                    }`}
+                    className={`flex items-center gap-2.5 p-2.5 rounded-xl border text-left transition-all duration-300 cursor-pointer ${active
+                      ? "bg-brand-gold/20 text-white border-brand-gold shadow-md shadow-brand-gold/20 scale-102"
+                      : "bg-white/5 text-white/75 border-white/10 hover:bg-white/12 hover:text-white"
+                      }`}
                   >
                     <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-lg overflow-hidden shrink-0 border border-white/20">
                       <Image src={img.src} alt="" fill className="object-cover" />

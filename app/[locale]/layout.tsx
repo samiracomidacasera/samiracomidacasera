@@ -21,25 +21,25 @@ const outfit = Outfit({
   display: "swap",
 });
 
-const baseUrl = "https://samiracomidaparallevar.com";
+const baseUrl = "https://www.samiracomidacasera.es";
 
 const metaByLocale: Record<Locale, { title: string; description: string; locale: string }> = {
   es: {
-    title: "Mejor Restaurante Marroquí en Torremolinos | Samira Comida Para Llevar",
+    title: "Samira comida casera | Mejor Restaurante Marroquí en Torremolinos",
     description:
-      "Disfruta de auténtica cocina marroquí casera en Torremolinos. Tajines, Cuscús, Pastilla, Harira. Para llevar, Uber Eats y Catering. Abierto todos los días 10:00–23:30.",
+      "Disfruta de auténtica cocina marroquí casera en Torremolinos. Tajines, Cuscús, Pastilla, Harira. Para llevar, Uber Eats y Catering. Abierto todos los días 10:00–21:00.",
     locale: "es_ES",
   },
   en: {
-    title: "Best Moroccan Restaurant in Torremolinos | Samira Comida Para Llevar",
+    title: "Samira comida casera | Best Moroccan Restaurant in Torremolinos",
     description:
-      "Enjoy authentic homemade Moroccan cuisine in Torremolinos. Tajines, Couscous, Pastilla, Harira. Take Away, Uber Eats & Catering. Open every day 10:00–23:30.",
+      "Enjoy authentic homemade Moroccan cuisine in Torremolinos. Tajines, Couscous, Pastilla, Harira. Take Away, Uber Eats & Catering. Open every day 10:00 AM–9:00 PM.",
     locale: "en_GB",
   },
   fr: {
-    title: "Meilleur Restaurant Marocain à Torremolinos | Samira Comida Para Llevar",
+    title: "Samira comida casera | Meilleur Restaurant Marocain à Torremolinos",
     description:
-      "Savourez une authentique cuisine marocaine maison à Torremolinos. Tajines, Couscous, Pastilla, Harira. À emporter, Uber Eats et Traiteur. Ouvert tous les jours 10h–23h30.",
+      "Savourez une authentique cuisine marocaine maison à Torremolinos. Tajines, Couscous, Pastilla, Harira. À emporter, Uber Eats et Traiteur. Ouvert tous les jours 10h–21h00.",
     locale: "fr_FR",
   },
 };
@@ -59,20 +59,22 @@ export async function generateMetadata({
     title: meta.title,
     description: meta.description,
     keywords: [
+      "Samira Comida Casera",
+      "Comida Casera",
       "Moroccan Restaurant Torremolinos",
       "Restaurante Marroquí Málaga",
       "Tajine", "Couscous", "Pastilla", "Harira",
       "Halal Restaurant", "Take Away Torremolinos",
-      "Uber Eats Torremolinos", "Samira Comida Para Llevar",
+      "Uber Eats Torremolinos", "Samira Comida Casera", "Samira Comida Para Llevar",
       "Comida Marroquí Torremolinos", "Catering Marroquí",
     ],
-    authors: [{ name: "Samira Comida Para Llevar" }],
+    authors: [{ name: "Samira Comida Casera" }],
     robots: { index: true, follow: true },
     openGraph: {
       type: "website",
       locale: meta.locale,
       url: `${baseUrl}/${lang}`,
-      siteName: "Samira Comida Para Llevar",
+      siteName: "Samira comida casera",
       title: meta.title,
       description: meta.description,
       images: [
@@ -80,13 +82,13 @@ export async function generateMetadata({
           url: "/hero.webp",
           width: 1200,
           height: 630,
-          alt: "Samira Comida Para Llevar - Authentic Moroccan Restaurant in Torremolinos",
+          alt: "Samira comida casera - Authentic Moroccan Restaurant in Torremolinos",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Samira Comida Para Llevar | Moroccan Restaurant Torremolinos",
+      title: "Samira comida casera | Moroccan Restaurant Torremolinos",
       description: meta.description,
       images: ["/hero.webp"],
     },
@@ -117,17 +119,17 @@ export function generateStaticParams() {
 const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  name: "Samira Comida Para Llevar",
+  name: "Samira comida casera",
   description: "Authentic homemade Moroccan cuisine in Torremolinos.",
   url: baseUrl,
   image: `${baseUrl}/hero.webp`,
   logo: `${baseUrl}/logo.png`,
   telephone: ["+34631615120", "+34722237487"],
-  servesCuisine: ["Moroccan", "North African", "Halal", "Mediterranean"],
+  servesCuisine: ["Moroccan", "casera", "North African", "Halal", "Mediterranean"],
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "C. Río Aranda, 11, Local 2",
+    streetAddress: "C. Río Aranda, 11, Loc 2, 29620 Torremolinos, Málaga, Spain",
     addressLocality: "Torremolinos",
     addressRegion: "Málaga",
     postalCode: "29620",
@@ -148,12 +150,12 @@ const restaurantJsonLd = {
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
       opens: "10:00",
-      closes: "23:30",
+      closes: "21:00",
     },
   ],
-  hasMap: "https://www.google.com/maps/place/C.+R%C3%ADo+Aranda,+11,+Local+2,+29620+Torremolinos,+M%C3%A1laga",
+  hasMap: "https://maps.app.goo.gl/J8AKxMpjs8dfLKPu5",
   hasMenu: `${baseUrl}/es#menu`,
   sameAs: [
     "https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw",
