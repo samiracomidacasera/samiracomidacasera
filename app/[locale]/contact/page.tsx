@@ -10,19 +10,19 @@ import ContactFAQ from "@/components/sections/contact-page/ContactFAQ";
 
 const metaByLocale: Record<string, { title: string; description: string }> = {
   es: {
-    title: "Contacto & Pedidos | Samira Comida Para Llevar Torremolinos",
+    title: "Contacto & Pedidos | Samira Comida Casera Torremolinos",
     description:
-      "Contacta con Samira Comida Para Llevar en Torremolinos. Teléfono, WhatsApp, pedidos para llevar, encargos especiales y catering marroquí.",
+      "Contacta con Samira Comida Casera en Torremolinos. Teléfono, WhatsApp, pedidos Comida Casera, encargos especiales y catering marroquí.",
   },
   en: {
-    title: "Contact & Orders | Samira Comida Para Llevar Torremolinos",
+    title: "Contact & Orders | Samira Comida Casera Torremolinos",
     description:
-      "Get in touch with Samira Comida Para Llevar in Torremolinos. Phone, WhatsApp, take away orders, special events, and Moroccan catering.",
+      "Get in touch with Samira Comida Casera in Torremolinos. Phone, WhatsApp, take away orders, special events, and Moroccan catering.",
   },
   fr: {
-    title: "Contact & Commandes | Samira Comida Para Llevar Torremolinos",
+    title: "Contact & Commandes | Samira Comida Casera Torremolinos",
     description:
-      "Contactez Samira Comida Para Llevar à Torremolinos. Téléphone, WhatsApp, commandes à emporter, événements spéciaux et service traiteur.",
+      "Contactez Samira Comida Casera à Torremolinos. Téléphone, WhatsApp, commandes à emporter, événements spéciaux et service traiteur.",
   },
 };
 
