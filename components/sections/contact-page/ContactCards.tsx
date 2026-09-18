@@ -56,8 +56,8 @@ export default function ContactCards() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-brand-cream/60 -mt-10 relative z-20">
-      <div className="container-custom">
+    <section className="py-12 md:py-16 bg-brand-cream/60 relative z-20">
+      <div className="  mt-40 mb-40 container-custom">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((c, i) => {
             const Icon = c.icon;
@@ -68,7 +68,7 @@ export default function ContactCards() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="bg-white rounded-3xl p-7 shadow-lg border border-brand-gold/15 flex flex-col justify-between hover:border-brand-gold/40 transition-all duration-300"
+                className="rounded-3xl p-7 shadow-lg border border-brand-gold/15 flex flex-col justify-between hover:border-brand-gold/40 transition-all duration-300"
               >
                 <div>
                   <div className="flex items-center justify-between mb-5">

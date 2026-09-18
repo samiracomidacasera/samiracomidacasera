@@ -17,6 +17,7 @@ export type UIKeys =
   | "hero_btn_call"
   | "hero_btn_uber"
   | "hero_btn_map"
+  | "hero_btn_reserve"
   | "why_badge"
   | "why_title"
   | "why_title_accent"
@@ -222,7 +223,27 @@ export type UIKeys =
   | "contact_faq_q4"
   | "contact_faq_a4"
   | "contact_faq_q5"
-  | "contact_faq_a5";
+  | "contact_faq_a5"
+  | "res_badge"
+  | "res_title"
+  | "res_title_accent"
+  | "res_desc"
+  | "res_form_name"
+  | "res_form_name_ph"
+  | "res_form_phone"
+  | "res_form_phone_ph"
+  | "res_form_guests"
+  | "res_form_guests_unit"
+  | "res_form_date"
+  | "res_form_time"
+  | "res_form_notes"
+  | "res_form_notes_ph"
+  | "res_btn_wsp"
+  | "res_btn_call"
+  | "res_feat_confirm"
+  | "res_feat_halal"
+  | "res_feat_fresh"
+  | "res_feat_hours";
 
 export const translations: Record<string, Record<UIKeys, string>> = {
   es: {
@@ -244,6 +265,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     hero_btn_call: "Llamar",
     hero_btn_uber: "Uber Eats",
     hero_btn_map: "Mapa",
+    hero_btn_reserve: "Reservar Mesa",
     why_badge: "Por Qué Elegirnos",
     why_title: "La Experiencia",
     why_title_accent: "Samira",
@@ -450,6 +472,26 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_faq_a4: "Sí, disponemos de una amplia variedad: Tajine de verduras, Cuscús de verduras, Pastela de verduras, Ensaladas marroquíes, Zaalouk de berenjena, Taktouka, Sopa Harira vegetal y cremas caseras.",
     contact_faq_q5: "¿Ofrecéis servicio de catering para bodas o cumpleaños?",
     contact_faq_a5: "Sí, preparamos menús completos para eventos, cumpleaños, bautizos y reuniones de empresa. Escríbenos por WhatsApp o a través del formulario para darte un presupuesto a medida.",
+    res_badge: "Reserva tu Mesa",
+    res_title: "Come en Nuestro Local",
+    res_title_accent: "Auténtico Sabor Marroquí",
+    res_desc: "Reserva tu mesa para comer en nuestro acogedor restaurante en Torremolinos. Disfruta de la mejor cocina marroquí casera recién salida de los fogones con confirmación instantánea por WhatsApp.",
+    res_form_name: "Nombre Completo",
+    res_form_name_ph: "Ej. Mohamed Alami",
+    res_form_phone: "Teléfono / WhatsApp",
+    res_form_phone_ph: "Ej. +34 600 000 000",
+    res_form_guests: "Número de Comensales",
+    res_form_guests_unit: "personas",
+    res_form_date: "Fecha de la Reserva",
+    res_form_time: "Hora Deseada",
+    res_form_notes: "Notas o Platos a Reservar (Opcional)",
+    res_form_notes_ph: "Ej. Mesa en terraza si es posible, o reservar con antelación un Tajine de Cordero...",
+    res_btn_wsp: "Enviar Reserva por WhatsApp",
+    res_btn_call: "Llamar para Reservar",
+    res_feat_confirm: "Confirmación Rápida por WhatsApp",
+    res_feat_halal: "Comida 100% Halal Certificada",
+    res_feat_fresh: "Platos Caseros Recién Servidos",
+    res_feat_hours: "Mesas disponibles 10:00 – 21:00",
   },
   en: {
     nav_home: "Home",
@@ -470,6 +512,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     hero_btn_call: "Call",
     hero_btn_uber: "Uber Eats",
     hero_btn_map: "Map",
+    hero_btn_reserve: "Book a Table",
     why_badge: "Why Choose Us",
     why_title: "The",
     why_title_accent: "Samira Experience",
@@ -676,6 +719,26 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_faq_a4: "Yes, we offer plenty: Vegetable Tajine, Vegetable Couscous, Vegetable Pastilla, fresh Moroccan salads, Zaalouk eggplant, Taktouka, and rich vegetable soups.",
     contact_faq_q5: "Do you cater for weddings or birthdays?",
     contact_faq_a5: "Yes, we provide tailored menus for birthday parties, family banquets, and corporate events. Contact us via WhatsApp or our form for a custom quote.",
+    res_badge: "Table Reservation",
+    res_title: "Dine In With Us",
+    res_title_accent: "Authentic Moroccan Flavor",
+    res_desc: "Reserve your table to dine at our cozy restaurant in Torremolinos. Enjoy hot, authentic homemade Moroccan cuisine fresh from our kitchen, confirmed instantly via WhatsApp.",
+    res_form_name: "Full Name",
+    res_form_name_ph: "e.g. John Smith",
+    res_form_phone: "Phone / WhatsApp",
+    res_form_phone_ph: "e.g. +34 600 000 000",
+    res_form_guests: "Number of Guests",
+    res_form_guests_unit: "people",
+    res_form_date: "Reservation Date",
+    res_form_time: "Desired Time",
+    res_form_notes: "Special Requests or Dishes (Optional)",
+    res_form_notes_ph: "e.g. Prefer terrace table if available, or pre-order a Lamb Tajine...",
+    res_btn_wsp: "Send Reservation via WhatsApp",
+    res_btn_call: "Call to Reserve",
+    res_feat_confirm: "Instant WhatsApp Confirmation",
+    res_feat_halal: "100% Certified Halal Food",
+    res_feat_fresh: "Freshly Made Homemade Dishes",
+    res_feat_hours: "Tables open 10:00 AM – 9:00 PM",
   },
   fr: {
     nav_home: "Accueil",
@@ -696,6 +759,7 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     hero_btn_call: "Appeler",
     hero_btn_uber: "Uber Eats",
     hero_btn_map: "Carte",
+    hero_btn_reserve: "Réserver une Table",
     why_badge: "Pourquoi Nous Choisir",
     why_title: "L'Expérience",
     why_title_accent: "Samira",
@@ -902,6 +966,26 @@ export const translations: Record<string, Record<UIKeys, string>> = {
     contact_faq_a4: "Oui, un large choix s'offre à vous : Tajine de légumes, Couscous aux légumes, Pastilla aux légumes, salades marocaines, Zaalouk d'aubergine, Taktouka et soupes maison.",
     contact_faq_q5: "Proposez-vous un service traiteur pour mariages ou fêtes ?",
     contact_faq_a5: "Oui, nous concevons des menus complets pour vos réceptions, anniversaires et repas de famille. Contactez-nous par WhatsApp pour un devis personnalisé.",
+    res_badge: "Réservation de Table",
+    res_title: "Mangez sur Place",
+    res_title_accent: "Saveurs Marocaines Authentiques",
+    res_desc: "Réservez votre table pour déguster nos spécialités dans notre restaurant chaleureux à Torremolinos. Cuisine maison traditionnelle servie bien chaude, avec confirmation immédiate sur WhatsApp.",
+    res_form_name: "Nom et Prénom",
+    res_form_name_ph: "Ex. Karim Benali",
+    res_form_phone: "Téléphone / WhatsApp",
+    res_form_phone_ph: "Ex. +34 600 000 000",
+    res_form_guests: "Nombre de Personnes",
+    res_form_guests_unit: "personnes",
+    res_form_date: "Date de Réservation",
+    res_form_time: "Heure Souhaitée",
+    res_form_notes: "Remarques ou Plats Souhaités (Facultatif)",
+    res_form_notes_ph: "Ex. Table en terrasse si possible, ou précommander un Tajine d'agneau...",
+    res_btn_wsp: "Envoyer la Réservation par WhatsApp",
+    res_btn_call: "Appeler pour Réserver",
+    res_feat_confirm: "Confirmation Rapide par WhatsApp",
+    res_feat_halal: "Cuisine 100% Halal Certifiée",
+    res_feat_fresh: "Plats Faits Maison Servis Chauds",
+    res_feat_hours: "Tables disponibles 10h00 – 21h00",
   },
 };
 

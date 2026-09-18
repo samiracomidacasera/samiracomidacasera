@@ -7,6 +7,7 @@ import MenuSection from "@/components/sections/MenuSection";
 import Gallery from "@/components/sections/Gallery";
 import About from "@/components/sections/About";
 import Reviews from "@/components/sections/Reviews";
+import ReservationSection from "@/components/sections/ReservationSection";
 import OrderSection from "@/components/sections/OrderSection";
 import MapSection from "@/components/sections/MapSection";
 import Footer from "@/components/sections/Footer";
@@ -24,6 +25,7 @@ export default function LocalePage() {
         <Gallery />
         <About />
         <Reviews />
+        <ReservationSection />
         <OrderSection />
         <MapSection />
       </main>

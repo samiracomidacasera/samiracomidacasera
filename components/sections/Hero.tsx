@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { MapPin, Phone, ChevronDown, Star, Clock, Store, UtensilsCrossed, ShieldCheck } from "lucide-react";
+import { MapPin, Phone, ChevronDown, Star, Clock, Store, UtensilsCrossed, ShieldCheck, Calendar } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import {
   UBER_EATS_URL,
@@ -64,6 +64,10 @@ export default function Hero() {
 
   const scrollToMenu = () => {
     document.getElementById("menu")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const scrollToReservation = () => {
+    document.getElementById("reserva")?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToNext = () => {
@@ -169,10 +173,18 @@ export default function Hero() {
             <div className="flex flex-wrap justify-center lg:justify-start items-center gap-3 w-full sm:w-auto">
               <button
                 onClick={scrollToMenu}
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-brand-gold text-white text-xs sm:text-[0.82rem] font-bold font-sans uppercase tracking-wider hover:bg-brand-gold-dark transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-brand-gold/25 cursor-pointer"
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-brand-gold text-white text-xs sm:text-[0.82rem] font-bold font-sans uppercase tracking-wider hover:bg-brand-gold-dark transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-brand-gold/25 cursor-pointer"
               >
                 <UtensilsCrossed size={15} />
                 {t("hero_btn_menu")}
+              </button>
+
+              <button
+                onClick={scrollToReservation}
+                className="w-full sm:w-auto flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-brand-green border border-brand-gold/40 text-white text-xs sm:text-[0.82rem] font-bold font-sans uppercase tracking-wider hover:bg-brand-green-dark transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-brand-green/30 cursor-pointer"
+              >
+                <Calendar size={15} className="text-brand-gold" />
+                {t("hero_btn_reserve")}
               </button>
 
               <a
