@@ -69,7 +69,17 @@ export async function generateMetadata({
       "Comida Marroquí Torremolinos", "Catering Marroquí",
     ],
     authors: [{ name: "Samira Comida Casera" }],
-    robots: { index: true, follow: true },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-video-preview": -1,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+      },
+    },
     openGraph: {
       type: "website",
       locale: meta.locale,
@@ -79,7 +89,7 @@ export async function generateMetadata({
       description: meta.description,
       images: [
         {
-          url: "/hero.webp",
+          url: `${baseUrl}/hero.webp`,
           width: 1200,
           height: 630,
           alt: "Samira comida casera - Authentic Moroccan Restaurant in Torremolinos",
@@ -88,9 +98,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "Samira comida casera | Moroccan Restaurant Torremolinos",
+      title: meta.title,
       description: meta.description,
-      images: ["/hero.webp"],
+      images: [`${baseUrl}/hero.webp`],
     },
     alternates: {
       canonical: `${baseUrl}/${lang}`,
@@ -180,11 +190,6 @@ export default async function LocaleLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* hreflang for SEO */}
-        <link rel="alternate" hrefLang="es" href={`${baseUrl}/es`} />
-        <link rel="alternate" hrefLang="en" href={`${baseUrl}/en`} />
-        <link rel="alternate" hrefLang="fr" href={`${baseUrl}/fr`} />
-        <link rel="alternate" hrefLang="x-default" href={`${baseUrl}/es`} />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }}

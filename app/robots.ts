@@ -5,7 +5,10 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
+      disallow: ["/api/", "/admin/", "/dashboard/", "/login/"],
     },
     sitemap: "https://www.samiracomidacasera.es/sitemap.xml",
+    host: "https://www.samiracomidacasera.es",
   };
 }
+
