@@ -11,25 +11,63 @@ import ContactFAQ from "@/components/sections/contact-page/ContactFAQ";
 
 const baseUrl = "https://www.samiracomidacasera.es";
 
-const metaByLocale: Record<string, { title: string; description: string; localeCode: string; breadcrumb: string }> = {
+const metaByLocale: Record<
+  string,
+  {
+    title: string;
+    description: string;
+    keywords: string[];
+    localeCode: string;
+    breadcrumb: string;
+  }
+> = {
   es: {
-    title: "Contacto & Pedidos | Samira Comida Casera Torremolinos",
+    title: "Restaurante Marroquí en Torremolinos | Contacto & Reservas Samira",
     description:
-      "Contacta con Samira Comida Casera en Torremolinos. Teléfono, WhatsApp, pedidos Comida Casera, reservas de mesa, encargos especiales y catering marroquí.",
+      "¿Buscas el mejor restaurante marroquí cerca de ti en Torremolinos? Contacta con Samira Comida Casera. Reservas de mesa, pedidos para llevar, 100% Halal y WhatsApp.",
+    keywords: [
+      "restaurante marroqui cerca de mi",
+      "restaurantes marroquies cerca de mi",
+      "restaurante marroqui torremolinos",
+      "restaurante marroqui malaga",
+      "restaurante arabe marroqui halal",
+      "mejor restaurante marroqui torremolinos",
+      "reserva restaurante marroqui",
+      "comida marroqui para llevar torremolinos",
+      "samira comida casera contacto",
+    ],
     localeCode: "es_ES",
     breadcrumb: "Contacto",
   },
   en: {
-    title: "Contact & Orders | Samira Comida Casera Torremolinos",
+    title: "Moroccan Restaurant in Torremolinos | Contact & Table Booking Samira",
     description:
-      "Get in touch with Samira Comida Casera in Torremolinos. Phone, WhatsApp, table reservations, take away orders, special events, and Moroccan catering.",
+      "Looking for the best Moroccan restaurant near you in Torremolinos? Book a table, order takeaway or contact Samira Comida Casera. 100% Halal, phone & WhatsApp.",
+    keywords: [
+      "moroccan restaurant near me",
+      "moroccan restaurant torremolinos",
+      "best moroccan restaurant malaga",
+      "halal moroccan restaurant torremolinos",
+      "book a table moroccan food",
+      "take away moroccan torremolinos",
+      "samira moroccan restaurant contact",
+    ],
     localeCode: "en_GB",
     breadcrumb: "Contact",
   },
   fr: {
-    title: "Contact & Commandes | Samira Comida Casera Torremolinos",
+    title: "Restaurant Marocain à Torremolinos | Contact & Réservations Samira",
     description:
-      "Contactez Samira Comida Casera à Torremolinos. Téléphone, WhatsApp, réservations de table, commandes à emporter, événements spéciaux et service traiteur.",
+      "Vous cherchez le meilleur restaurant marocain près de chez vous à Torremolinos ? Réservez une table, commandez à emporter chez Samira. 100% Halal, tél & WhatsApp.",
+    keywords: [
+      "restaurant marocain pres de moi",
+      "restaurant marocain torremolinos",
+      "meilleur restaurant marocain malaga",
+      "restaurant halal torremolinos",
+      "reservation restaurant marocain",
+      "plats a emporter torremolinos",
+      "samira restaurant marocain contact",
+    ],
     localeCode: "fr_FR",
     breadcrumb: "Contact",
   },
@@ -47,6 +85,7 @@ export async function generateMetadata({
   return {
     title: meta.title,
     description: meta.description,
+    keywords: meta.keywords,
     robots: {
       index: true,
       follow: true,
