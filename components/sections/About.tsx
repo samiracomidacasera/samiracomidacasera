@@ -68,7 +68,7 @@ export default function About() {
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 45vw"
-                priority
+                quality={80}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
             </div>

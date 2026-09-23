@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import Image from 'next/image'
 import {
   Sparkles,
   Salad,
@@ -405,13 +406,17 @@ export default function MenuSection() {
                     className='flex gap-4 items-start pb-6 border-b border-brand-gold/8 group hover:border-brand-gold/25 transition-colors duration-300'
                   >
                     {/* Thumbnail Image on the Left */}
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={dishImg}
-                      alt={trans.name}
-                      className='w-18 h-18 sm:w-21 sm:h-21 rounded-xl shrink-0 border border-brand-gold/10 shadow-sm group-hover:scale-103 transition-transform duration-300 object-cover'
-                      style={{ width: '72px', height: '72px' }}
-                    />
+                    <div className='relative w-18 h-18 sm:w-21 sm:h-21 rounded-xl shrink-0 overflow-hidden border border-brand-gold/10 shadow-sm'>
+                      <Image
+                        src={dishImg}
+                        alt={trans.name}
+                        width={84}
+                        height={84}
+                        quality={75}
+                        loading="lazy"
+                        className='w-full h-full object-cover group-hover:scale-105 transition-transform duration-300'
+                      />
+                    </div>
 
                     {/* Content on the Right */}
                     <div className='flex-1 min-w-0 flex flex-col justify-between self-stretch py-0.5'>

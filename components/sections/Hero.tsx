@@ -112,9 +112,8 @@ export default function Hero() {
               COLUMN 1: Text, Information & Actions (Left Side)
               ======================================================== */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75 }}
+            initial={{ opacity: 1, y: 0 }}
+            animate={{ opacity: 1, y: 0 }}
             className="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-left"
           >
             {/* Quality Rating Pill */}
@@ -228,21 +227,18 @@ export default function Hero() {
           {/* ========================================================
               COLUMN 2: Restaurant Visual Showcase (Right Side - Enlarged)
               ======================================================== */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75, delay: 0.15 }}
+          <div
             className="lg:col-span-7 w-full flex flex-col items-center"
           >
             {/* Main Interactive Photo Frame - Enlarged to 500-540px on desktop */}
             <div className="relative w-full h-80 sm:h-96 md:h-[460px] lg:h-[500px] xl:h-[540px] rounded-2xl sm:rounded-3xl overflow-hidden border-2 border-brand-gold/35 shadow-2xl shadow-black/70 group bg-black/40">
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={currentImg.id}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.98 }}
-                  transition={{ duration: 0.6 }}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.45 }}
                   className="absolute inset-0"
                 >
                   <Image
@@ -250,12 +246,12 @@ export default function Hero() {
                     alt={photoLabel}
                     fill
                     priority
-                    quality={92}
+                    quality={82}
                     className="object-cover transition-transform duration-700 group-hover:scale-103"
                     style={{
                       objectPosition: currentImg.id === "facade" ? "center 15%" : "center",
                     }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 60vw, 750px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 700px"
                   />
                   {/* Elegant Gradient overlays */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/35" />
@@ -324,7 +320,7 @@ export default function Hero() {
                 );
               })}
             </div>
-          </motion.div>
+          </div>
 
         </div>
       </div>
