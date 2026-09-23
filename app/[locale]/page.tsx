@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
 import FloatingButtons from "@/components/FloatingButtons";
 import Hero from "@/components/sections/Hero";
+import HouseSpecialties from "@/components/sections/HouseSpecialties";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import FeaturedDishes from "@/components/sections/FeaturedDishes";
 import MenuSection from "@/components/sections/MenuSection";
 import Gallery from "@/components/sections/Gallery";
 import About from "@/components/sections/About";
@@ -20,7 +20,7 @@ export default function LocalePage() {
       <main>
         <Hero />
         <WhyChooseUs />
-        <FeaturedDishes />
+        <HouseSpecialties />
         <MenuSection />
         <Gallery />
         <About />

@@ -118,9 +118,9 @@ export default function Footer() {
 
           {/* Quick links list column */}
           <div>
-            <h4 className="font-serif font-bold text-[1.05rem] text-white mb-4">
+            <p className="font-serif font-bold text-[1.05rem] text-white mb-4">
               {t("foot_col_links")}
-            </h4>
+            </p>
             <div className="space-y-2">
               {navLinks.map((l) => (
                 <a
@@ -138,9 +138,9 @@ export default function Footer() {
 
           {/* Contact Details Column */}
           <div>
-            <h4 className="font-serif font-bold text-[1.05rem] text-white mb-4">
+            <p className="font-serif font-bold text-[1.05rem] text-white mb-4">
               {t("foot_col_contact")}
-            </h4>
+            </p>
             <div className="space-y-4">
               <div className="flex items-start gap-2.5">
                 <MapPin size={14} className="text-brand-gold mt-0.5 shrink-0" />
@@ -170,9 +170,9 @@ export default function Footer() {
 
           {/* Opening hours status column */}
           <div>
-            <h4 className="font-serif font-bold text-[1.05rem] text-white mb-4">
+            <p className="font-serif font-bold text-[1.05rem] text-white mb-4">
               {t("foot_col_hours")}
-            </h4>
+            </p>
             <div className="flex items-start gap-2.5 mb-4">
               <Clock size={14} className="text-brand-gold mt-0.5 shrink-0" />
               <div className="leading-tight">

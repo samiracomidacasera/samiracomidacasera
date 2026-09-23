@@ -281,9 +281,9 @@ export default function Hero() {
                   <span className="inline-block px-2.5 py-0.5 mb-1.5 rounded text-[10px] font-bold uppercase tracking-wider bg-brand-gold text-[#072118]">
                     {currentImg.tag}
                   </span>
-                  <h3 className="font-serif text-white font-bold text-lg sm:text-2xl leading-tight drop-shadow-md">
+                  <p className="font-serif text-white font-bold text-lg sm:text-2xl leading-tight drop-shadow-md">
                     {photoLabel}
-                  </h3>
+                  </p>
                 </div>
 
                 <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/12 backdrop-blur-md border border-white/15 text-white text-xs font-sans font-medium">
