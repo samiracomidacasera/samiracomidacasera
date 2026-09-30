@@ -8,6 +8,7 @@ import ReservationSection from "@/components/sections/ReservationSection";
 import ContactForm from "@/components/sections/contact-page/ContactForm";
 import LocationDetails from "@/components/sections/contact-page/LocationDetails";
 import ContactFAQ from "@/components/sections/contact-page/ContactFAQ";
+import { translations } from "@/lib/translations";
 
 const baseUrl = "https://www.samiracomidacasera.es";
 
@@ -139,6 +140,7 @@ export default async function ContactPage({
   const { locale } = await params;
   const lang = metaByLocale[locale] ? locale : "es";
   const meta = metaByLocale[lang];
+  const t = translations[lang as "es" | "en" | "fr"] || translations["es"];
 
   const breadcrumbJsonLd = {
     "@context": "https://schema.org",
@@ -159,11 +161,87 @@ export default async function ContactPage({
     ],
   };
 
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: t.contact_faq_q1,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.contact_faq_a1,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t.contact_faq_q2,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.contact_faq_a2,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t.contact_faq_q3,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.contact_faq_a3,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t.contact_faq_q4,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.contact_faq_a4,
+        },
+      },
+      {
+        "@type": "Question",
+        name: t.contact_faq_q5,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: t.contact_faq_a5,
+        },
+      },
+    ],
+  };
+
+  const contactPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: meta.title,
+    description: meta.description,
+    url: `${baseUrl}/${lang}/contact`,
+    mainEntity: {
+      "@type": "Restaurant",
+      name: "Samira comida casera",
+      telephone: "+34631615120",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "C. Río Aranda, 11, Loc 2",
+        addressLocality: "Torremolinos",
+        addressRegion: "Málaga",
+        postalCode: "29620",
+        addressCountry: "ES",
+      },
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageJsonLd) }}
       />
       <Navigation />
       <FloatingButtons />

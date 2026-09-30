@@ -14,7 +14,7 @@ export default function FloatingButtons() {
       <motion.a
         href={WHATSAPP_URL}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener noreferrer nofollow"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 0.8, type: "spring", stiffness: 220 }}
@@ -56,7 +56,7 @@ export default function FloatingButtons() {
       <motion.a
         href={UBER_EATS_URL}
         target="_blank"
-        rel="noopener noreferrer"
+        rel="noopener noreferrer nofollow"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ delay: 1, type: "spring", stiffness: 220 }}

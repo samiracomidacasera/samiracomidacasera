@@ -115,7 +115,7 @@ export default function ContactCards() {
                     <a
                       href={c.href}
                       target={c.isExternal ? "_blank" : undefined}
-                      rel={c.isExternal ? "noopener noreferrer" : undefined}
+                      rel={c.isExternal ? "noopener noreferrer nofollow" : undefined}
                       className={`w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-sans text-xs sm:text-sm font-bold uppercase tracking-wider transition-all ${c.buttonClass}`}
                     >
                       <span>{c.buttonText}</span>

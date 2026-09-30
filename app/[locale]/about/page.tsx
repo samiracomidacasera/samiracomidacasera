@@ -121,11 +121,39 @@ export default async function AboutPage({
     ],
   };
 
+  const aboutPageJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: meta.title,
+    description: meta.description,
+    url: `${baseUrl}/${lang}/about`,
+    mainEntity: {
+      "@type": "Restaurant",
+      name: "Samira comida casera",
+      description: "Authentic homemade Moroccan cuisine and catering in Torremolinos, Málaga.",
+      url: `${baseUrl}/${lang}`,
+      servesCuisine: ["Moroccan", "Halal", "Mediterranean"],
+      telephone: "+34631615120",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "C. Río Aranda, 11, Loc 2",
+        addressLocality: "Torremolinos",
+        addressRegion: "Málaga",
+        postalCode: "29620",
+        addressCountry: "ES",
+      },
+    },
+  };
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutPageJsonLd) }}
       />
       <Navigation />
       <FloatingButtons />

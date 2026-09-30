@@ -129,7 +129,7 @@ export default function Reviews() {
           <a
             href="https://www.google.com/maps/place/Samira,+Restaurante+y+Comida+para+llevar/@36.6277619,-4.5036805,17z/data=!4m8!3m7!1s0xd72fb80641f8155:0xbb451066758bcd8e!8m2!3d36.6277619!4d-4.5011049!9m1!1b1!16s%2Fg%2F11vbbwyd0p?entry=ttu&g_ep=EgoyMDI2MDkwOS4wIKXMDSoASAFQAw%3D%3D"
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="btn-primary"
           >
             <Star size={14} />

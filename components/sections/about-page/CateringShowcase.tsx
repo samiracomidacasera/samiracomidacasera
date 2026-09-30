@@ -62,7 +62,7 @@ export default function CateringShowcase() {
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="btn-primary"
               >
                 <CalendarCheck size={16} />

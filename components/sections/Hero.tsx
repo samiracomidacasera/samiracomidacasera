@@ -197,7 +197,7 @@ export default function Hero() {
               <a
                 href={UBER_EATS_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#06C167] text-white text-xs sm:text-[0.82rem] font-bold font-sans uppercase tracking-wider hover:bg-[#04a355] transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-[#06C167]/25"
               >
                 <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
@@ -209,7 +209,7 @@ export default function Hero() {
               <a
                 href={GOOGLE_MAPS_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl border-2 border-white/70 text-white text-xs sm:text-[0.82rem] font-bold font-sans uppercase tracking-wider hover:bg-white/10 hover:border-white transition-all duration-300 hover:-translate-y-0.5"
               >
                 <MapPin size={14} />

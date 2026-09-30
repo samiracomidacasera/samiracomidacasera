@@ -16,8 +16,9 @@ export const PHONE_SECONDARY = '+34 722 237 487'
 export const PHONE_PRIMARY_RAW = '+34631615120'
 export const PHONE_SECONDARY_RAW = '+34722237487'
 
-export const UBER_EATS_URL =
+export const UBER_EATS_DIRECT_URL =
   'https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw'
+export const UBER_EATS_URL = '/out/ubereats'
 
 export const GOOGLE_MAPS_URL =
   'https://maps.app.goo.gl/J8AKxMpjs8dfLKPu5'

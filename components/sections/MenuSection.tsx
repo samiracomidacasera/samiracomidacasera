@@ -20,6 +20,7 @@ import {
 import { menuData } from '@/lib/menu-data'
 import { useLanguage } from '@/context/LanguageContext'
 import { menuTranslations } from '@/lib/translations'
+import { UBER_EATS_URL, WHATSAPP_URL } from '@/lib/utils'
 
 const categoryIconStyles: Record<
   string,
@@ -476,9 +477,9 @@ export default function MenuSection() {
           </p>
           <div className='flex flex-col sm:flex-row justify-center items-center gap-3 w-full max-w-sm sm:max-w-none mx-auto px-4 sm:px-0'>
             <a
-              href='https://wa.me/34631615120?text=Hola%2C%20quisiera%20hacer%20un%20pedido%20de%20comida%20marroqui.'
+              href={WHATSAPP_URL}
               target='_blank'
-              rel='noopener noreferrer'
+              rel='noopener noreferrer nofollow'
               className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#007a55] text-white text-sm font-semibold font-sans hover:bg-[#009966] transition-all duration-300 shadow-md shadow-[#009966]/10'
             >
               <svg viewBox='0 0 24 24' fill='currentColor' className='w-4 h-4'>
@@ -487,9 +488,9 @@ export default function MenuSection() {
               {t('menu_btn_whatsapp')}
             </a>
             <a
-              href='https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw'
+              href={UBER_EATS_URL}
               target='_blank'
-              rel='noopener noreferrer'
+              rel='noopener noreferrer nofollow'
               className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#06C167] text-white text-sm font-semibold font-sans hover:bg-[#04a355] transition-all duration-300 shadow-md shadow-[#06C167]/10'
             >
               {t('menu_btn_uber')}

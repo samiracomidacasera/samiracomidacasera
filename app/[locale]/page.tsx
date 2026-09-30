@@ -12,9 +12,23 @@ import OrderSection from "@/components/sections/OrderSection";
 import MapSection from "@/components/sections/MapSection";
 import Footer from "@/components/sections/Footer";
 
+const webSiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Samira comida casera",
+  url: "https://www.samiracomidacasera.es",
+  inLanguage: ["es", "en", "fr"],
+  description:
+    "Auténtica comida marroquí tradicional y casera en Torremolinos, Málaga. Para llevar, a domicilio y catering.",
+};
+
 export default function LocalePage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+      />
       <Navigation />
       <FloatingButtons />
       <main>

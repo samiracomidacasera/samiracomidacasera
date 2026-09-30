@@ -70,7 +70,7 @@ export default function MapSection() {
                   <a
                     href={GOOGLE_MAPS_URL}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center gap-1.5 mt-2.5 text-brand-green hover:text-brand-green-dark font-sans text-[11px] font-bold uppercase tracking-wider transition-colors"
                   >
                     <ExternalLink size={10} /> {t("map_address_link")}
@@ -188,7 +188,7 @@ export default function MapSection() {
               <a
                 href={GOOGLE_MAPS_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="btn-primary"
               >
                 <MapPin size={14} /> {t("map_btn_google")}

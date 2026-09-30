@@ -50,7 +50,7 @@ export default function AboutCTA() {
           <a
             href={WHATSAPP_URL}
             target="_blank"
-            rel="noopener noreferrer"
+            rel="noopener noreferrer nofollow"
             className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-sans text-xs sm:text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-md"
           >
             <MessageCircle size={16} />

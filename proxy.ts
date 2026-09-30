@@ -20,10 +20,11 @@ function getPreferredLocale(req: NextRequest): Locale {
 export function proxy(req: NextRequest) {
   const { pathname } = req.nextUrl;
 
-  // Skip Next.js internals, API routes, and static files
+  // Skip Next.js internals, API routes, external redirects, and static files
   if (
     pathname.startsWith("/_next") ||
     pathname.startsWith("/api") ||
+    pathname.startsWith("/out") ||
     pathname.includes(".")
   ) {
     return NextResponse.next();

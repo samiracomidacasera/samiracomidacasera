@@ -9,6 +9,16 @@ const nextConfig: NextConfig = {
   },
   compress: true,
   poweredByHeader: false,
+  async redirects() {
+    return [
+      {
+        source: "/out/ubereats",
+        destination:
+          "https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw",
+        permanent: false,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

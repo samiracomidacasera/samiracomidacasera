@@ -78,7 +78,7 @@ export default function LocationDetails() {
               <a
                 href={GOOGLE_MAPS_URL}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="btn-primary py-2.5 px-5 text-xs"
               >
                 <ExternalLink size={13} />

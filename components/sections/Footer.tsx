@@ -106,7 +106,7 @@ export default function Footer() {
                   key={s.name}
                   href={s.href}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   aria-label={s.name}
                   className={`w-8 h-8 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center text-white/70 ${s.hoverColor} transition-all duration-200 cursor-pointer`}
                 >
@@ -151,7 +151,7 @@ export default function Footer() {
                   <a
                     href={GOOGLE_MAPS_URL}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="inline-flex items-center gap-1 mt-1.5 text-brand-gold hover:text-brand-gold-light text-[10.5px] font-sans transition-colors font-bold"
                   >
                     <ExternalLink size={10} /> {t("map_address_link")}

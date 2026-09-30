@@ -162,9 +162,14 @@ const restaurantJsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 36.6211,
-    longitude: -4.4986,
+    latitude: 36.6277619,
+    longitude: -4.5011049,
   },
+  currenciesAccepted: "EUR",
+  paymentAccepted: "Cash, Credit Card, Bizum",
+  acceptsReservations: "True",
+  knowsLanguage: ["es", "en", "fr", "ar"],
+  areaServed: ["Torremolinos", "Benalmádena", "Málaga", "Costa del Sol"],
   aggregateRating: {
     "@type": "AggregateRating",
     ratingValue: "4.6",
@@ -184,6 +189,7 @@ const restaurantJsonLd = {
   hasMenu: `${baseUrl}/es#menu`,
   sameAs: [
     "https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw",
+    "https://maps.app.goo.gl/J8AKxMpjs8dfLKPu5",
   ],
 };
 

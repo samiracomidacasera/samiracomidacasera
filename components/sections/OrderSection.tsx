@@ -118,7 +118,7 @@ export default function OrderSection() {
               key={o.id}
               href={o.href}
               target={o.target}
-              rel={o.target === '_blank' ? 'noopener noreferrer' : undefined}
+              rel={o.target === '_blank' ? 'noopener noreferrer nofollow' : undefined}
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
