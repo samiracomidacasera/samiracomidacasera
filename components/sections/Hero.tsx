@@ -222,6 +222,14 @@ export default function Hero() {
               <ShieldCheck size={14} className="text-brand-gold" />
               <span>Comida casera auténtica • 100% Halal • Elaboración diaria</span>
             </div>
+
+            {/* Hidden SEO text - crawlable by Google, invisible to users */}
+            <p className="sr-only">
+              Restaurante marroquí cerca de mi en Torremolinos, Málaga. Si buscas un restaurante marroquí cerca de mí,
+              Samira Comida Casera es tu mejor opción en la Costa del Sol. Comida marroquí cerca de mi: tajines,
+              cuscús, pastilla y harira elaborados cada día. El restaurante marroquí más cerca de ti en Torremolinos.
+              Restaurantes marroquíes cerca de mi en Málaga con servicio para llevar y a domicilio.
+            </p>
           </motion.div>
 
           {/* ========================================================

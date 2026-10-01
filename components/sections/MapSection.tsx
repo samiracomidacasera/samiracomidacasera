@@ -67,6 +67,9 @@ export default function MapSection() {
                     29620 Torremolinos<br />
                     Málaga, España
                   </p>
+                  <p className="text-brand-green font-sans text-[0.75rem] font-semibold mt-1.5">
+                    📍 Restaurante marroquí cerca de mi · Torremolinos
+                  </p>
                   <a
                     href={GOOGLE_MAPS_URL}
                     target="_blank"

@@ -25,19 +25,19 @@ const baseUrl = "https://www.samiracomidacasera.es";
 
 const metaByLocale: Record<Locale, { title: string; description: string; locale: string }> = {
   es: {
-    title: "Samira comida casera | Mejor Restaurante Marroquí en Torremolinos",
+    title: "Restaurante Marroquí cerca de mí en Torremolinos - Samira Comida Casera",
     description:
-      "Disfruta de auténtica cocina marroquí casera en Torremolinos. Tajines, Cuscús, Pastilla, Harira. Para llevar, Uber Eats y Catering. Abierto todos los días 10:00–21:00.",
+      "¿Buscas un restaurante marroquí cerca de ti? Samira en Torremolinos ofrece auténtica cocina marroquí casera: Tajines, Cuscús, Pastilla, Harira. Para llevar, Uber Eats y Catering. Abierto todos los días 10:00–21:00.",
     locale: "es_ES",
   },
   en: {
-    title: "Samira comida casera | Best Moroccan Restaurant in Torremolinos",
+    title: "Moroccan Restaurant in Torremolinos - Samira comida casera",
     description:
       "Enjoy authentic homemade Moroccan cuisine in Torremolinos. Tajines, Couscous, Pastilla, Harira. Take Away, Uber Eats & Catering. Open every day 10:00 AM–9:00 PM.",
     locale: "en_GB",
   },
   fr: {
-    title: "Samira comida casera | Meilleur Restaurant Marocain à Torremolinos",
+    title: "Restaurant Marocain à Torremolinos - Samira comida casera",
     description:
       "Savourez une authentique cuisine marocaine maison à Torremolinos. Tajines, Couscous, Pastilla, Harira. À emporter, Uber Eats et Traiteur. Ouvert tous les jours 10h–21h00.",
     locale: "fr_FR",
@@ -59,10 +59,14 @@ export async function generateMetadata({
     title: meta.title,
     description: meta.description,
     keywords: [
+      "restaurante marroquí cerca de mi",
+      "restaurante marroquí cerca de mí",
+      "restaurantes marroquíes cerca de mi",
+      "comida marroquí cerca de mi",
+      "restaurante marroquí más cerca",
+      "restaurante marroquí cerca de aquí",
       "Samira Comida Casera",
       "Samira Comida Para Llevar",
-      "Restaurante Marroquí cerca de mí",
-      "Restaurantes marroquíes cerca de mí",
       "Restaurante Árabe Marroquí Halal",
       "Comida Marroquí Torremolinos",
       "Comida Marroquí en Torremolinos",
@@ -145,7 +149,8 @@ const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: "Samira comida casera",
-  description: "Authentic homemade Moroccan cuisine in Torremolinos.",
+  description: "Restaurante marroquí cerca de ti en Torremolinos, Málaga. Auténtica comida marroquí casera: Tajines, Cuscús, Pastilla, Harira. Para llevar, Uber Eats y Catering. El mejor restaurante marroquí cerca de mi en la Costa del Sol.",
+  keywords: "restaurante marroquí cerca de mi, restaurante marroquí cerca de mí, comida marroquí cerca de mi, restaurante marroquí Torremolinos, comida marroquí Málaga, tajines caseros, cuscús marroquí, comida halal Torremolinos",
   url: baseUrl,
   image: `${baseUrl}/hero.webp`,
   logo: `${baseUrl}/logo.png`,
