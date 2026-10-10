@@ -9,6 +9,7 @@ import {
   PHONE_SECONDARY_RAW,
   WHATSAPP_URL,
   UBER_EATS_URL,
+  SHOW_UBER_EATS,
 } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -40,25 +41,33 @@ export default function ContactCards() {
       phone2: { label: PHONE_SECONDARY, raw: PHONE_SECONDARY_RAW },
       isDualPhone: true,
     },
-    {
-      badge: t("contact_card_uber_badge"),
-      badgeColor: "bg-green-100 text-green-800 border-green-300",
-      title: t("contact_card_uber_title"),
-      desc: t("contact_card_uber_desc"),
-      icon: Bike,
-      iconBg: "bg-[#06C167] text-white",
-      buttonText: t("contact_card_uber_btn"),
-      href: UBER_EATS_URL,
-      isExternal: true,
-      buttonClass:
-        "bg-[#06C167] hover:bg-[#05a357] text-white shadow-md shadow-[#06C167]/20",
-    },
+    ...(SHOW_UBER_EATS
+      ? [
+          {
+            badge: t("contact_card_uber_badge"),
+            badgeColor: "bg-green-100 text-green-800 border-green-300",
+            title: t("contact_card_uber_title"),
+            desc: t("contact_card_uber_desc"),
+            icon: Bike,
+            iconBg: "bg-[#06C167] text-white",
+            buttonText: t("contact_card_uber_btn"),
+            href: UBER_EATS_URL,
+            isExternal: true,
+            buttonClass:
+              "bg-[#06C167] hover:bg-[#05a357] text-white shadow-md shadow-[#06C167]/20",
+          },
+        ]
+      : []),
   ];
 
   return (
     <section className="py-12 md:py-16 bg-brand-cream/60 relative z-20">
       <div className="  mt-40 mb-40 container-custom">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div
+          className={`grid grid-cols-1 ${
+            cards.length === 2 ? "md:grid-cols-2 max-w-3xl" : "md:grid-cols-3"
+          } gap-6 mx-auto`}
+        >
           {cards.map((c, i) => {
             const Icon = c.icon;
             return (

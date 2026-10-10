@@ -12,6 +12,7 @@ import {
   GOOGLE_MAPS_URL,
   GOOGLE_MAPS_EMBED,
   isRestaurantOpenNow,
+  SHOW_UBER_EATS,
 } from "@/lib/utils";
 
 export default function MapSection() {
@@ -151,7 +152,7 @@ export default function MapSection() {
                 {[
                   t("service_dine"),
                   t("service_take"),
-                  t("service_uber"),
+                  ...(SHOW_UBER_EATS ? [t("service_uber")] : []),
                   t("service_special"),
                   t("service_catering"),
                   t("service_family"),

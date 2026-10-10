@@ -11,6 +11,7 @@ import {
   GOOGLE_MAPS_URL,
   RESTAURANT_ADDRESS,
   OPENING_HOURS,
+  SHOW_UBER_EATS,
 } from "@/lib/utils";
 
 const RESTAURANT_IMAGES = [
@@ -194,17 +195,19 @@ export default function Hero() {
                 {t("hero_btn_call")}
               </a>
 
-              <a
-                href={UBER_EATS_URL}
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#06C167] text-white text-xs sm:text-[0.82rem] font-bold font-sans uppercase tracking-wider hover:bg-[#04a355] transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-[#06C167]/25"
-              >
-                <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
-                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
-                </svg>
-                {t("hero_btn_uber")}
-              </a>
+              {SHOW_UBER_EATS && (
+                <a
+                  href={UBER_EATS_URL}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#06C167] text-white text-xs sm:text-[0.82rem] font-bold font-sans uppercase tracking-wider hover:bg-[#04a355] transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-[#06C167]/25"
+                >
+                  <svg viewBox="0 0 24 24" fill="white" className="w-4 h-4">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+                  </svg>
+                  {t("hero_btn_uber")}
+                </a>
+              )}
 
               <a
                 href={GOOGLE_MAPS_URL}

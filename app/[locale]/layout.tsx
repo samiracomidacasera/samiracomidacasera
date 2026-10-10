@@ -3,6 +3,7 @@ import { Playfair_Display, Outfit } from "next/font/google";
 import "../globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { notFound } from "next/navigation";
+import { SHOW_UBER_EATS } from "@/lib/utils";
 
 const LOCALES = ["es", "en", "fr"] as const;
 type Locale = (typeof LOCALES)[number];
@@ -193,7 +194,9 @@ const restaurantJsonLd = {
   hasMap: "https://maps.app.goo.gl/J8AKxMpjs8dfLKPu5",
   hasMenu: `${baseUrl}/es#menu`,
   sameAs: [
-    "https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw",
+    ...(SHOW_UBER_EATS
+      ? ["https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw"]
+      : []),
     "https://maps.app.goo.gl/J8AKxMpjs8dfLKPu5",
   ],
 };

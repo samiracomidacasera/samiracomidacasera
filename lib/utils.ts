@@ -20,6 +20,9 @@ export const UBER_EATS_DIRECT_URL =
   'https://www.ubereats.com/es/store/samira-comida-casera-marroqui/DO4fAewQUH-pb_L20dvrZw'
 export const UBER_EATS_URL = '/out/ubereats'
 
+// Variable globale pour afficher/cacher Uber Eats sur tout le site (true = afficher, false = cacher)
+export const SHOW_UBER_EATS = false
+
 export const GOOGLE_MAPS_URL =
   'https://maps.app.goo.gl/J8AKxMpjs8dfLKPu5'
 

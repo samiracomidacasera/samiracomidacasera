@@ -9,6 +9,7 @@ import ContactForm from "@/components/sections/contact-page/ContactForm";
 import LocationDetails from "@/components/sections/contact-page/LocationDetails";
 import ContactFAQ from "@/components/sections/contact-page/ContactFAQ";
 import { translations } from "@/lib/translations";
+import { SHOW_UBER_EATS } from "@/lib/utils";
 
 const baseUrl = "https://www.samiracomidacasera.es";
 
@@ -181,14 +182,18 @@ export default async function ContactPage({
           text: t.contact_faq_a2,
         },
       },
-      {
-        "@type": "Question",
-        name: t.contact_faq_q3,
-        acceptedAnswer: {
-          "@type": "Answer",
-          text: t.contact_faq_a3,
-        },
-      },
+      ...(SHOW_UBER_EATS
+        ? [
+            {
+              "@type": "Question",
+              name: t.contact_faq_q3,
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: t.contact_faq_a3,
+              },
+            },
+          ]
+        : []),
       {
         "@type": "Question",
         name: t.contact_faq_q4,

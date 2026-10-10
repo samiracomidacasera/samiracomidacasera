@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Phone } from "lucide-react";
-import { WHATSAPP_URL, UBER_EATS_URL, PHONE_PRIMARY_RAW } from "@/lib/utils";
+import { WHATSAPP_URL, UBER_EATS_URL, PHONE_PRIMARY_RAW, SHOW_UBER_EATS } from "@/lib/utils";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function FloatingButtons() {
@@ -53,26 +53,28 @@ export default function FloatingButtons() {
       </motion.a>
 
       {/* Uber Eats */}
-      <motion.a
-        href={UBER_EATS_URL}
-        target="_blank"
-        rel="noopener noreferrer nofollow"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 1, type: "spring", stiffness: 220 }}
-        whileHover={{ scale: 1.12 }}
-        whileTap={{ scale: 0.95 }}
-        className="w-11 h-11 md:w-13 md:h-13 rounded-full bg-[#06C167] flex items-center justify-center shadow-lg shadow-[#06C167]/25 group relative cursor-pointer"
-        aria-label="Uber Eats"
-      >
-        <svg viewBox="0 0 24 24" fill="white" className="w-5.5 h-5.5 md:w-6.5 md:h-6.5">
-          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 5v10h2V7h-2zm-3 2v6h2V9H8zm8 0v6h2V9h-2z" />
-        </svg>
-        {/* Tooltip */}
-        <span className="absolute right-14 md:right-16 bg-gray-900 text-white text-[11px] font-medium px-2.5 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md font-sans">
-          Uber Eats
-        </span>
-      </motion.a>
+      {SHOW_UBER_EATS && (
+        <motion.a
+          href={UBER_EATS_URL}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 1, type: "spring", stiffness: 220 }}
+          whileHover={{ scale: 1.12 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-11 h-11 md:w-13 md:h-13 rounded-full bg-[#06C167] flex items-center justify-center shadow-lg shadow-[#06C167]/25 group relative cursor-pointer"
+          aria-label="Uber Eats"
+        >
+          <svg viewBox="0 0 24 24" fill="white" className="w-5.5 h-5.5 md:w-6.5 md:h-6.5">
+            <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2zm-1 5v10h2V7h-2zm-3 2v6h2V9H8zm8 0v6h2V9h-2z" />
+          </svg>
+          {/* Tooltip */}
+          <span className="absolute right-14 md:right-16 bg-gray-900 text-white text-[11px] font-medium px-2.5 py-1.5 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none shadow-md font-sans">
+            Uber Eats
+          </span>
+        </motion.a>
+      )}
     </div>
   );
 }

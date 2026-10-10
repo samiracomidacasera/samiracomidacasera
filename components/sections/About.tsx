@@ -12,6 +12,7 @@ import {
   Users,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { SHOW_UBER_EATS } from "@/lib/utils";
 
 export default function About() {
   const { t } = useLanguage();
@@ -34,7 +35,9 @@ export default function About() {
   const services = [
     { name: t("service_dine"), icon: Utensils, bg: "bg-brand-green-dark" },
     { name: t("service_take"), icon: ShoppingBag, bg: "bg-brand-gold" },
-    { name: t("service_uber"), icon: Bike, bg: "bg-[#06C167]" },
+    ...(SHOW_UBER_EATS
+      ? [{ name: t("service_uber"), icon: Bike, bg: "bg-[#06C167]" }]
+      : []),
     { name: t("service_special"), icon: Star, bg: "bg-brand-terra" },
     { name: t("service_catering"), icon: ChefHat, bg: "bg-brand-green-light" },
     { name: t("service_family"), icon: Users, bg: "bg-brand-gold-dark" },

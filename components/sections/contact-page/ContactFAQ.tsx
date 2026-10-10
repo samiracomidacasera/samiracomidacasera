@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, HelpCircle } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { SHOW_UBER_EATS } from "@/lib/utils";
 
 export default function ContactFAQ() {
   const { t } = useLanguage();
@@ -12,7 +13,7 @@ export default function ContactFAQ() {
   const faqs = [
     { q: t("contact_faq_q1"), a: t("contact_faq_a1") },
     { q: t("contact_faq_q2"), a: t("contact_faq_a2") },
-    { q: t("contact_faq_q3"), a: t("contact_faq_a3") },
+    ...(SHOW_UBER_EATS ? [{ q: t("contact_faq_q3"), a: t("contact_faq_a3") }] : []),
     { q: t("contact_faq_q4"), a: t("contact_faq_a4") },
     { q: t("contact_faq_q5"), a: t("contact_faq_a5") },
   ];

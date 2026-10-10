@@ -20,7 +20,7 @@ import {
 import { menuData } from '@/lib/menu-data'
 import { useLanguage } from '@/context/LanguageContext'
 import { menuTranslations } from '@/lib/translations'
-import { UBER_EATS_URL, WHATSAPP_URL } from '@/lib/utils'
+import { UBER_EATS_URL, WHATSAPP_URL, SHOW_UBER_EATS } from '@/lib/utils'
 
 const categoryIconStyles: Record<
   string,
@@ -487,14 +487,16 @@ export default function MenuSection() {
               </svg>
               {t('menu_btn_whatsapp')}
             </a>
-            <a
-              href={UBER_EATS_URL}
-              target='_blank'
-              rel='noopener noreferrer nofollow'
-              className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#06C167] text-white text-sm font-semibold font-sans hover:bg-[#04a355] transition-all duration-300 shadow-md shadow-[#06C167]/10'
-            >
-              {t('menu_btn_uber')}
-            </a>
+            {SHOW_UBER_EATS && (
+              <a
+                href={UBER_EATS_URL}
+                target='_blank'
+                rel='noopener noreferrer nofollow'
+                className='w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-[#06C167] text-white text-sm font-semibold font-sans hover:bg-[#04a355] transition-all duration-300 shadow-md shadow-[#06C167]/10'
+              >
+                {t('menu_btn_uber')}
+              </a>
+            )}
           </div>
         </motion.div>
       </div>

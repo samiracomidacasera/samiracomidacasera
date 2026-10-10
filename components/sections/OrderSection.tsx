@@ -8,6 +8,7 @@ import {
   UBER_EATS_URL,
   PHONE_PRIMARY_RAW,
   PHONE_SECONDARY_RAW,
+  SHOW_UBER_EATS,
 } from '@/lib/utils'
 
 export default function OrderSection() {
@@ -39,31 +40,35 @@ export default function OrderSection() {
             : 'Plus Rapide',
       badgeColor: 'bg-[#25D366]/10 text-[#1ebe58]',
     },
-    {
-      id: 'ubereats',
-      title: t('order_uber_title'),
-      subtitle: t('order_uber_sub'),
-      description: t('order_uber_desc'),
-      icon: (
-        <svg viewBox='0 0 24 24' fill='white' className='w-7 h-7'>
-          <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z' />
-        </svg>
-      ),
-      iconBg: 'bg-[#06C167]',
-      btnBg: 'bg-[#06C167] hover:bg-[#04a355]',
-      border: 'hover:border-[#06C167]/25',
-      shadow: 'hover:shadow-[#06C167]/10',
-      ctaText: t('menu_btn_uber'),
-      href: UBER_EATS_URL,
-      target: '_blank',
-      badge:
-        language === 'es'
-          ? 'A Domicilio'
-          : language === 'en'
-            ? 'Home Delivery'
-            : 'Livraison',
-      badgeColor: 'bg-[#06C167]/10 text-[#04a355]',
-    },
+    ...(SHOW_UBER_EATS
+      ? [
+          {
+            id: 'ubereats',
+            title: t('order_uber_title'),
+            subtitle: t('order_uber_sub'),
+            description: t('order_uber_desc'),
+            icon: (
+              <svg viewBox='0 0 24 24' fill='white' className='w-7 h-7'>
+                <path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z' />
+              </svg>
+            ),
+            iconBg: 'bg-[#06C167]',
+            btnBg: 'bg-[#06C167] hover:bg-[#04a355]',
+            border: 'hover:border-[#06C167]/25',
+            shadow: 'hover:shadow-[#06C167]/10',
+            ctaText: t('menu_btn_uber'),
+            href: UBER_EATS_URL,
+            target: '_blank',
+            badge:
+              language === 'es'
+                ? 'A Domicilio'
+                : language === 'en'
+                  ? 'Home Delivery'
+                  : 'Livraison',
+            badgeColor: 'bg-[#06C167]/10 text-[#04a355]',
+          },
+        ]
+      : []),
     {
       id: 'call',
       title: t('order_call_title'),
@@ -112,7 +117,11 @@ export default function OrderSection() {
         </motion.div>
 
         {/* Cards Grid */}
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl mx-auto'>
+        <div
+          className={`grid grid-cols-1 ${
+            options.length === 2 ? 'md:grid-cols-2 max-w-2xl' : 'md:grid-cols-3 max-w-4xl'
+          } gap-5 mx-auto`}
+        >
           {options.map((o, i) => (
             <motion.a
               key={o.id}

@@ -14,6 +14,7 @@ import {
   GOOGLE_MAPS_URL,
   OPENING_HOURS,
   isRestaurantOpenNow,
+  SHOW_UBER_EATS,
 } from "@/lib/utils";
 
 const socials = [
@@ -27,16 +28,20 @@ const socials = [
     ),
     hoverColor: "hover:text-[#25D366] hover:border-[#25D366]/20",
   },
-  {
-    name: "Uber Eats",
-    href: UBER_EATS_URL,
-    icon: (
-      <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
-        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
-      </svg>
-    ),
-    hoverColor: "hover:text-[#06C167] hover:border-[#06C167]/20",
-  },
+  ...(SHOW_UBER_EATS
+    ? [
+        {
+          name: "Uber Eats",
+          href: UBER_EATS_URL,
+          icon: (
+            <svg viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" />
+            </svg>
+          ),
+          hoverColor: "hover:text-[#06C167] hover:border-[#06C167]/20",
+        },
+      ]
+    : []),
 ];
 
 import { usePathname, useRouter } from "next/navigation";
